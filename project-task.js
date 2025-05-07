@@ -44,31 +44,39 @@ but it contains multiple syntax errors that prevent it from being parsed.
 // 🔍 Provided JSON File with Errors
 // ============================================
 
-const invalidBookingJSON = `
-{
-  "hotelName": "Grand City Hotel",
-  "checkInDate": "2024-05-15"
-  "checkOutDate": "2024-05-20",
-  "guests": [
-    {
-      name: "Alice Johnson",
-      "age": 30,
-      "email": "alice.johnson@example.com"
-    },
-    {
-      "name": "Bob Smith",
-      "age": undefined,
-      "email": "bob.smith@example"
+{"hotelBooking":
+  {
+    "hotelName": "Grand City Hotel",
+    "checkInDate": "2024-05-15",   
+    "checkOutDate": "2024-05-20",
+    "guests": [
+      {
+        "name": "Alice Johnson",
+        "age": 30,
+        "email": "alice.johnson@example.com"
+      },
+      {
+        "name": "Bob Smith",
+        "age": null,
+        "email": "bob.smith@example"
+      }
+    ],
+    "roomDetails": {
+      "type": "Suite",
+      "pricePerNight": 200,
+      "amenities": ["WiFi", "Breakfast", "Parking"]
     }
-  ],
-  "roomDetails": {
-    "type": "Suite",
-    "pricePerNight": 200,
-    "amenities": ["WiFi", "Breakfast", "Parking",]
   }
 }
-`;
+;
 
+//Explinations
+
+//Line 47, I'm not sure there is supposed to be a const so I took that away.
+//Line 50, added a comma after the date.
+//Line 54, put double quotes around name. 
+//Line 60, changed the age from undefined to null.
+//Line 67, removed the comma after "Parking".
 
 // ============================================
 // ✅ Requirements
@@ -91,11 +99,15 @@ const invalidBookingJSON = `
 💬 Reflect and answer the following:
 
 1️⃣ What tools or techniques did you use to identify the errors?
+//I read over the code and identified the errors. The I used the above linter to ensure my code was correct.
 
 2️⃣ How did you confirm that your corrected JSON file was valid?
+//I used the linter above.
 
 3️⃣ Which errors were the most difficult to spot? Why?
+//The most difficult error to spot was the final one, I just kind of looked over it.
 
 4️⃣ What strategies can help you avoid these kinds of errors in the future?
    (e.g., syntax highlighting, linters, writing JSON by example)
 */
+//Strategies that can help would be to reread and use linters.
